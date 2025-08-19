@@ -1,0 +1,437 @@
+/* Global styles with Nenrin branding and wooden ring effects */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nenrin-forest: #1A4A35;
+  --nenrin-forest-light: #2A7A5A;
+  --nenrin-sprout: #4FB36B;
+  --nenrin-sprout-light: #6BC584;
+  --nenrin-bark: #2A1F1C;
+  --nenrin-mist: #F8FAF9;
+  --nenrin-ink: #0A0B0C;
+  --nenrin-white: #FFFFFF;
+  --forest-hover: #164A32;
+  --forest-active: #12432B;
+  --nenrin-gold: #B8941F;
+  --nenrin-sage: #7A9B6E;
+  --nenrin-text-light: #4A5A52;
+  
+  /* Wooden ring theme colors */
+  --wood-light: #D4A574;
+  --wood-medium: #B8956A;
+  --wood-dark: #A0825C;
+  --wood-grain: #8B6F47;
+  --wood-bark: #6B5437;
+}
+
+/* Enhanced Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(-5px) rotate(-0.5deg);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  25% {
+    transform: rotate(90deg) scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(180deg) scale(0.9);
+    opacity: 0.9;
+  }
+  75% {
+    transform: rotate(270deg) scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* Enhanced Components */
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fadeInScale {
+  animation: fadeInScale 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: floatAnimation 6s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #1A4A35, #2A7A5A);
+  color: #FFFFFF;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(31, 94, 66, 0.2);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #164A32, #1A4A35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(31, 94, 66, 0.3);
+}
+
+.btn-primary:active {
+  background: linear-gradient(to right, #12432B, #164A32);
+  transform: translateY(0);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: width 0.6s, height 0.6s;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.btn-primary:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-accent {
+  background: linear-gradient(to right, #4FB36B, #6BC584);
+  color: #0A0B0C;
+  border: none;
+  padding: 0.625rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(96, 198, 137, 0.2);
+}
+
+.btn-accent:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(96, 198, 137, 0.3);
+}
+
+.focusable:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(31,94,66,.45), 0 0 20px rgba(31,94,66,.2);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #E8F3EC 0%, #F1F8F4 100%);
+  color: #1A4A35;
+  border: 1px solid rgba(26, 74, 53, 0.15);
+}
+
+.chip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(79, 179, 107, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.chip:hover::before {
+  left: 100%;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(26, 74, 53, 0.12);
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--nenrin-sprout), var(--nenrin-forest), var(--nenrin-gold));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(26, 74, 53, 0.15);
+  border-color: rgba(26, 74, 53, 0.18);
+}
+
+.suggestion-card {
+  transition: all 0.3s ease;
+}
+
+.suggestion-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(26, 74, 53, 0.18);
+}
+
+.suggestion-card:hover .card-icon {
+  transform: scale(1.2) rotate(5deg);
+  color: var(--nenrin-sprout);
+}
+
+.card-icon {
+  transition: all 0.3s ease;
+}
+
+.section-card {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.section-card.animate-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.grid-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.grid-item.animate-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.grid-item:nth-child(1) { animation-delay: 0.1s; }
+.grid-item:nth-child(2) { animation-delay: 0.2s; }
+.grid-item:nth-child(3) { animation-delay: 0.3s; }
+.grid-item:nth-child(4) { animation-delay: 0.4s; }
+.grid-item:nth-child(5) { animation-delay: 0.5s; }
+.grid-item:nth-child(6) { animation-delay: 0.6s; }
+
+.subtle {
+  color: var(--nenrin-text-light);
+}
+
+/* Enhanced card text contrast */
+.card-text {
+  color: var(--nenrin-ink);
+}
+
+.card-text-secondary {
+  color: var(--nenrin-text-light);
+}
+
+/* Enhanced header */
+.enhanced-header {
+  background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,248,243,0.9) 100%);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(31, 94, 66, 0.08);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
+}
+
+.logo-container {
+  transition: all 0.3s ease;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+/* Section dividers */
+.section-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--nenrin-sprout), var(--nenrin-forest), var(--nenrin-sprout), transparent);
+  margin: 2rem 0;
+  border-radius: 2px;
+  opacity: 0.3;
+}
+
+/* Wooden Ring Backgrounds */
+.wooden-rings-1 {
+  background-image: 
+    radial-gradient(ellipse 800px 400px at 50% 50%, transparent 45%, var(--wood-light) 46%, var(--wood-light) 49%, transparent 50%),
+    radial-gradient(ellipse 600px 300px at 50% 50%, transparent 55%, var(--wood-medium) 56%, var(--wood-medium) 58%, transparent 59%),
+    radial-gradient(ellipse 400px 200px at 50% 50%, transparent 65%, var(--wood-dark) 66%, var(--wood-dark) 67%, transparent 68%),
+    radial-gradient(ellipse 200px 100px at 50% 50%, transparent 75%, var(--wood-grain) 76%, var(--wood-grain) 77%, transparent 78%);
+  background-size: 100% 100%;
+  opacity: 0.08;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.wooden-rings-2 {
+  background-image: 
+    radial-gradient(ellipse 700px 350px at 30% 70%, transparent 40%, var(--wood-medium) 41%, var(--wood-medium) 43%, transparent 44%),
+    radial-gradient(ellipse 500px 250px at 70% 30%, transparent 50%, var(--wood-light) 51%, var(--wood-light) 53%, transparent 54%),
+    radial-gradient(ellipse 300px 150px at 50% 50%, transparent 60%, var(--wood-dark) 61%, var(--wood-dark) 62%, transparent 63%),
+    radial-gradient(ellipse 150px 75px at 40% 60%, transparent 70%, var(--wood-bark) 71%, var(--wood-bark) 72%, transparent 73%);
+  background-size: 100% 100%;
+  opacity: 0.06;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.wooden-rings-3 {
+  background-image: 
+    radial-gradient(ellipse 600px 300px at 60% 40%, transparent 35%, var(--wood-light) 36%, var(--wood-light) 38%, transparent 39%),
+    radial-gradient(ellipse 450px 225px at 40% 60%, transparent 45%, var(--wood-medium) 46%, var(--wood-medium) 48%, transparent 49%),
+    radial-gradient(ellipse 350px 175px at 50% 50%, transparent 55%, var(--wood-dark) 56%, var(--wood-dark) 57%, transparent 58%),
+    radial-gradient(ellipse 200px 100px at 35% 65%, transparent 65%, var(--wood-grain) 66%, var(--wood-grain) 67%, transparent 68%),
+    radial-gradient(ellipse 100px 50px at 65% 35%, transparent 75%, var(--wood-bark) 76%, var(--wood-bark) 77%, transparent 78%);
+  background-size: 100% 100%;
+  opacity: 0.07;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+/* Section-specific wooden ring animations */
+@keyframes woodenRingsFloat1 {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(0.5deg) scale(1.002); }
+}
+
+@keyframes woodenRingsFloat2 {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  33% { transform: rotate(-0.3deg) scale(1.001); }
+  66% { transform: rotate(0.4deg) scale(1.002); }
+}
+
+@keyframes woodenRingsFloat3 {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(0.2deg) scale(1.001); }
+  75% { transform: rotate(-0.3deg) scale(1.002); }
+}
+
+.wooden-rings-1 { animation: woodenRingsFloat1 20s ease-in-out infinite; }
+.wooden-rings-2 { animation: woodenRingsFloat2 25s ease-in-out infinite; }
+.wooden-rings-3 { animation: woodenRingsFloat3 30s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .no-motion, * {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Loading shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
