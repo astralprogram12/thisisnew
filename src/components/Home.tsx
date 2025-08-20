@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { SuggestionCard } from './SuggestionCard';
-import { Icon } from './Icons';
+import { SparkIcon, CheckIcon, TimerIcon, BellIcon } from './Icons';
 
 export function Home() {
   // Animation trigger effect
@@ -31,7 +31,7 @@ export function Home() {
         <div className="wooden-rings-1"></div>
         <div className="flex items-center gap-3 mb-4 relative z-10">
           <div className="p-2 rounded-xl bg-gradient-to-r from-nenrin-sprout to-nenrin-forest-light">
-            <Icon.Spark className="text-white animate-sparkle" width="20" height="20"/>
+            <SparkIcon className="text-white animate-sparkle" width="20" height="20"/>
           </div>
           <div>
             <h2 className="font-nenrin-heading text-[24px] font-bold tracking-wide text-nenrin-ink">
@@ -42,12 +42,12 @@ export function Home() {
         </div>
         <div className="section-divider my-4 relative z-10"/>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
-          <SuggestionCard title="Greet the Sun" phrase="summarize my tasks every day at 6am" icon={<Icon.Check/>} />
-          <SuggestionCard title="Root a New Habit" phrase="run every Sunday at 7am" icon={<Icon.Timer/>} />
-          <SuggestionCard title="A Gentle Nudge" phrase="remind me to call mom at 6pm today" icon={<Icon.Bell/>} />
-          <SuggestionCard title="Find Your Clearing" phrase="don't reply to my message for an hour" icon={<Icon.Bell/>} />
-          <SuggestionCard title="Jot Down a Thought" phrase="Today I learned that elephants have incredible memories." icon={<Icon.Check/>} />
-          <SuggestionCard title="Personalize Your Assistant" phrase="From now on, always sign off with my name, [Your Name]." icon={<Icon.Check/>} />
+          <SuggestionCard title="Greet the Sun" phrase="summarize my tasks every day at 6am" icon={<CheckIcon/>} />
+          <SuggestionCard title="Root a New Habit" phrase="run every Sunday at 7am" icon={<TimerIcon/>} />
+          <SuggestionCard title="A Gentle Nudge" phrase="remind me to call mom at 6pm today" icon={<BellIcon/>} />
+          <SuggestionCard title="Find Your Clearing" phrase="don't reply to my message for an hour" icon={<BellIcon/>} />
+          <SuggestionCard title="Jot Down a Thought" phrase="Today I learned that elephants have incredible memories." icon={<CheckIcon/>} />
+          <SuggestionCard title="Personalize Your Assistant" phrase="From now on, always sign off with my name, [Your Name]." icon={<CheckIcon/>} />
         </div>
       </section>
 
@@ -56,7 +56,7 @@ export function Home() {
         <div className="wooden-rings-2"></div>
         <div className="flex items-center gap-3 mb-4 relative z-10">
           <div className="p-2 rounded-xl bg-gradient-to-r from-nenrin-forest to-nenrin-gold">
-            <Icon.Spark className="text-white animate-sparkle" width="20" height="20" style={{ animationDelay: "1s" }}/>
+            <SparkIcon className="text-white animate-sparkle" width="20" height="20" style={{ animationDelay: "1s" }}/>
           </div>
           <div>
             <h2 className="font-nenrin-heading text-[22px] font-bold tracking-wide text-nenrin-ink">
@@ -91,7 +91,7 @@ export function Home() {
         <div className="wooden-rings-3"></div>
         <div className="flex items-center gap-3 mb-4 relative z-10">
           <div className="p-2 rounded-xl bg-gradient-to-r from-nenrin-sage to-nenrin-sprout">
-            <Icon.Spark className="text-white animate-sparkle" width="20" height="20" style={{ animationDelay: "2s" }}/>
+            <SparkIcon className="text-white animate-sparkle" width="20" height="20" style={{ animationDelay: "2s" }}/>
           </div>
           <div>
             <h2 className="font-nenrin-heading text-[20px] font-semibold tracking-wider text-nenrin-ink">

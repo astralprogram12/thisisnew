@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Icon } from '../src/components/Icons';
+import { SparkIcon } from '../src/components/Icons';
 
 export default function NotFound() {
   return (
@@ -7,7 +7,7 @@ export default function NotFound() {
       <div className="text-center px-6">
         <div className="mb-8">
           <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-nenrin-sprout to-nenrin-forest flex items-center justify-center">
-            <Icon.Spark className="text-white" width="32" height="32" />
+            <SparkIcon className="text-white" width="32" height="32" />
           </div>
         </div>
         
@@ -23,7 +23,7 @@ export default function NotFound() {
           href="/"
           className="inline-flex items-center gap-2 px-6 py-3 bg-nenrin-forest text-white rounded-full hover:bg-nenrin-bark transition-colors duration-200"
         >
-          <Icon.Spark width="16" height="16" />
+          <SparkIcon width="16" height="16" />
           Return Home
         </Link>
       </div>

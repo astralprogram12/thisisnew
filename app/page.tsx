@@ -4,7 +4,7 @@ import React from 'react';
 import { NenrinLogo } from '../src/components/NenrinLogo';
 import { RingsBackground } from '../src/components/RingsBackground';
 import { Home } from '../src/components/Home';
-import { Icon } from '../src/components/Icons';
+import { SparkIcon } from '../src/components/Icons';
 
 export default function NenrinDashboard() {
   return (
@@ -15,7 +15,7 @@ export default function NenrinDashboard() {
           <NenrinLogo size={48}/>
           <div className="flex items-center gap-4">
             <span className="chip animate-fadeInScale" style={{ animationDelay: "0.5s" }}>
-              <Icon.Spark width="14" height="14" className="animate-sparkle"/> 
+              <SparkIcon width="14" height="14" className="animate-sparkle"/> 
               New branches are growing... Dashboard coming soon.
             </span>
           </div>
@@ -29,7 +29,7 @@ export default function NenrinDashboard() {
         {/* Decorative element */}
         <div className="mb-6">
           <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-nenrin-sprout to-nenrin-forest flex items-center justify-center animate-float">
-            <Icon.Spark className="text-white animate-sparkle" width="24" height="24"/>
+            <SparkIcon className="text-white animate-sparkle" width="24" height="24"/>
           </div>
         </div>
         
