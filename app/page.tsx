@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import { NenrinLogo } from '@/components/NenrinLogo';
-import { RingsBackground } from '@/components/RingsBackground';
-import { Home } from '@/components/Home';
-import { Icon } from '@/components/Icons';
+import { NenrinLogo } from '../src/components/NenrinLogo';
+import { RingsBackground } from '../src/components/RingsBackground';
+import { Home } from '../src/components/Home';
+import { Icon } from '../src/components/Icons';
 
 export default function NenrinDashboard() {
   return (

@@ -1,1 +1,1 @@
-keep assets in the dir to use.
+Nenrin Dashboard - A nature-inspired productivity companion built with Next.js 14, TypeScript, and Tailwind CSS.
