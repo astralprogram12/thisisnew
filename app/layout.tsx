@@ -17,13 +17,17 @@ export const metadata: Metadata = {
   description: 'A calm, nature-inspired dashboard that nudges users to use WhatsApp for productivity and personal organization.',
   keywords: 'productivity, dashboard, whatsapp, nature, minimal, task management',
   authors: [{ name: 'MiniMax Agent' }],
-  viewport: 'width=device-width, initial-scale=1',
   themeColor: '#1A4A35',
   manifest: '/manifest.json',
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({

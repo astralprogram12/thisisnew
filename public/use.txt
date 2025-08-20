@@ -1,1 +1,1 @@
-Nenrin Dashboard - A nature-inspired productivity companion built with Next.js 14, TypeScript, and Tailwind CSS.
+keep assets in the dir to use.
